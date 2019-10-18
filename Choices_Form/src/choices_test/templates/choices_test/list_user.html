@@ -1,0 +1,36 @@
+
+
+<h1> قائمة الفريق </h1>
+
+ <p> ------------------------------------- </p>
+ <form method="get">
+   {{ filter.form.as_p }}
+   <button type="submit">Search</button>
+ </form>
+ <p> ------------------------------------- </p>
+
+<table>
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for user in filter.qs %}
+        <tr>
+          <td> {{ user.first_name }} </td>
+          <td> {{ user.last_name }}  </td>
+          <td> {{ user.user_type }}  </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="3">No data user</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+
+
