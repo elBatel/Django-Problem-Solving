@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .models import UserInfo
-from .forms import UserInfoForm
 from .filters import UserTypeFilter
 
 def list_user(request):
